@@ -1,0 +1,96 @@
+body {
+    font-family: Roboto, sans-serif;
+    display: flex;
+    justify-content: center;   /* Aligns horizontally */
+    align-items: center;       /* Aligns vertically */
+    flex-direction: column;
+    height: 100vh;             /* Ensures the container takes full viewport height */
+    margin: 0;                 /* Removes default margin */
+    transition: all .5s ease-in-out;
+}
+#container {
+    background-color: lightgray;
+    border-radius: 15px;
+    border: none;
+    padding: 5px;
+}
+.options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+#submit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+    width: 46px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    background-color: #989898;
+    transition: background-color .5s cubic-bezier(0,.83,.44,1);
+}
+#submit-icon {
+    width: 30px;
+}
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    background-color: #c6c6c6;
+    align-items: center;
+}
+#propertyButtons {
+    display: flex;
+    flex-direction: row;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #bababa;
+    border-radius: 5px;
+    transition: all .5s cubic-bezier(0,.83,.44,1);
+    width: 40px;
+    height: 40px;
+    margin-left : 10px;
+}
+.buttons:hover {
+    transform: scale(1.1);
+}
+.trash-icon {
+    width: 25px;
+    background-color: #f31e1e;
+    border-radius: 3px;
+    padding: 5px;
+    transition: all  .5s cubic-bezier(0,.83,.44,1);
+}
+.edit-icon {
+    width: 25px;
+}
+#text-box {
+    height: 40px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    background-color: #bababa;
+    padding: 3px 6px;
+    transition: all .5s cubic-bezier(0,.83,.44,1);
+}
+#text-box:focus {
+    border: none;
+    outline: none;
+    background-color: #989898
+}
+.options:focus-within #submit-button {
+    background-color: #777777; /* Darker shade */
+}
+
+.removeButtons {
+    background-color: #c51919;
+}
