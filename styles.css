@@ -1,11 +1,11 @@
 body {
     font-family: Roboto, sans-serif;
     display: flex;
-    justify-content: center;   /* Aligns horizontally */
-    align-items: center;       /* Aligns vertically */
+    justify-content: center;
+    align-items: center;      
     flex-direction: column;
-    height: 100vh;             /* Ensures the container takes full viewport height */
-    margin: 0;                 /* Removes default margin */
+    height: 100vh;     
+    margin: 0;
     transition: all .5s ease-in-out;
 }
 #container {
@@ -89,7 +89,7 @@ body {
     background-color: #989898
 }
 .options:focus-within #submit-button {
-    background-color: #777777; /* Darker shade */
+    background-color: #777777; 
 }
 
 .removeButtons {
