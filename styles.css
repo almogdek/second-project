@@ -56,13 +56,16 @@ body {
     border: none;
     background-color: #bababa;
     border-radius: 5px;
-    transition: all .5s cubic-bezier(0,.83,.44,1);
+    transition: all .7s cubic-bezier(0.1,1,.39,1.06);
     width: 40px;
     height: 40px;
     margin-left : 10px;
 }
 .buttons:hover {
     transform: scale(1.1);
+}
+.buttons:active {
+    transform: scale(.9);
 }
 .trash-icon {
     width: 25px;

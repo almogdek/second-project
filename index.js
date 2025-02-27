@@ -27,7 +27,19 @@ function addTask() {
     editButton.innerHTML = '<img src="icons/editIcon.svg" class="edit-icon">';
     propertyButtons.appendChild(editButton);
     editButton.addEventListener('click', function() {
-        clonedItemDiv.innerHTML = '<input  type="text">'})
+        clonedItemDiv.innerHTML = '<input  type="text">'
+        clonedItemDiv.childNodes[0] = 'edit'
+        const editButtonSubmit = document.createElement("button");
+        editButtonSubmit.innerHTML = '<img src="icons/doneIcon.svg">'
+        editButtonSubmit.id = `editButton${taskCount}`;
+        editButtonSubmit.classList.add("buttons");
+        clonedItemDiv.appendChild(editButtonSubmit);
+        editButtonSubmit.addEventListener('click', function() {
+
+        })
+        
+    })
+    
     propertyButtons.appendChild(removeButton);
     removeButton.addEventListener('click', function () {
         taskCount--;
