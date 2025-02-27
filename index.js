@@ -26,6 +26,8 @@ function addTask() {
     editButton.classList.add('editButtons');
     editButton.innerHTML = '<img src="icons/editIcon.svg" class="edit-icon">';
     propertyButtons.appendChild(editButton);
+    editButton.addEventListener('click', function() {
+        clonedItemDiv.innerHTML = '<input  type="text">'
     propertyButtons.appendChild(removeButton);
     removeButton.addEventListener('click', function () {
         taskCount--;
