@@ -3,9 +3,9 @@ const submitButton = document.querySelector('#submit-button');
 const itemDiv = document.querySelector('#item1');
 const itemContainer = document.querySelector('#items');
 let taskCount = 1;
-const removeButton = document.querySelector('#remove-button');
 function addTask() {
     taskCount++;
+
     let inputValue = textBox.value;
     const clonedItemDiv = itemDiv.cloneNode(true);
     clonedItemDiv.textContent = inputValue;
@@ -13,7 +13,8 @@ function addTask() {
     itemContainer.appendChild(clonedItemDiv);
     textBox.value = '';
     const propertyButtons = document.createElement('div')
-    propertyButtons.id = 'propertyButtons';
+    propertyButtons.id = `propertyButton${taskCount}`;
+    propertyButtons.classList.add('propertyButtons');
     clonedItemDiv.appendChild(propertyButtons);
     const removeButton = document.createElement("button");
     removeButton.id = `removeButton${taskCount}`;
@@ -24,18 +25,21 @@ function addTask() {
     editButton.id = `editButton${taskCount}`;
     editButton.classList.add("buttons");
     editButton.classList.add('editButtons');
-    editButton.innerHTML = '<img src="icons/editIcon.svg" class="edit-icon">';
+    editButton.innerHTML = '<img src="icons/editIcon.svg" class="edit-icon" alt="">';
     propertyButtons.appendChild(editButton);
     editButton.addEventListener('click', function() {
-        clonedItemDiv.innerHTML = '<input  type="text">'
-        clonedItemDiv.childNodes[0] = 'edit'
-        const editButtonSubmit = document.createElement("button");
-        editButtonSubmit.innerHTML = '<img src="icons/doneIcon.svg">'
-        editButtonSubmit.id = `editButton${taskCount}`;
-        editButtonSubmit.classList.add("buttons");
-        clonedItemDiv.appendChild(editButtonSubmit);
-        editButtonSubmit.addEventListener('click', function() {
-
+        clonedItemDiv.innerHTML = '<input class="newTextBox" type="text" style="flex: 1; border-radius: 5px; padding: 0; border: 0; height: 45px; background-color: #c6c6c6;" placeholder="Type New Task Here..">'
+        const newTextBox = document.querySelector('.newTextBox')
+        newTextBox.focus();
+        newTextBox.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && newTextBox.value !== '') {
+                const value = newTextBox.value;
+                clonedItemDiv.remove();
+                addTask();
+                const newTask = document.createElement("p");
+                document.querySelector(`#item${taskCount}`).insertBefore(newTask, document.querySelector('#propertyButton' + taskCount));
+                newTask.textContent = value;
+            }
         })
         
     })
@@ -64,5 +68,6 @@ textBox.addEventListener('keydown', function(event) {
         alert("Please enter a task");
     }
 });
+
 
 

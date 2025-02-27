@@ -1,5 +1,5 @@
 body {
-    font-family: Roboto, sans-serif;
+    font-family: "Noto Sans", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;      
@@ -8,11 +8,27 @@ body {
     margin: 0;
     transition: all .5s ease-in-out;
 }
+p {
+    margin: 0;
+}
+#item1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    background-color: #afafaf;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#title {
+    font-weight: 800;
+}
 #container {
     background-color: lightgray;
     border-radius: 15px;
     border: none;
-    padding: 5px;
+    padding: -32px 5px 5px;
 }
 .options {
     display: flex;
@@ -45,7 +61,7 @@ body {
     background-color: #c6c6c6;
     align-items: center;
 }
-#propertyButtons {
+.propertyButtons {
     display: flex;
     flex-direction: row;
 }
@@ -60,6 +76,7 @@ body {
     width: 40px;
     height: 40px;
     margin-left : 10px;
+
 }
 .buttons:hover {
     transform: scale(1.1);
@@ -97,4 +114,14 @@ body {
 
 .removeButtons {
     background-color: #c51919;
+}
+.newTextBox:focus {
+    outline: none;
+    font-size: 16px;
+    font-family: "Noto Sans", sans-serif;
+}
+.newTextBox::placeholder {
+}
+.editButtons {
+    margin-left: 50px;
 }
