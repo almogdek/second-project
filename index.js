@@ -52,7 +52,6 @@ function addTask() {
                 textBox.disabled = false;
             }
         })
-        
     })
     
     propertyButtons.appendChild(removeButton);
@@ -78,7 +77,4 @@ textBox.addEventListener('keydown', function(event) {
     else if (event.key === 'Enter' && textBox.value === '') {
         alert("Please enter a task");
     }
-});
-
-
-
+})
