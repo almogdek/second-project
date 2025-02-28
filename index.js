@@ -31,6 +31,16 @@ function addTask() {
         clonedItemDiv.innerHTML = '<input class="newTextBox" type="text" style="flex: 1; border-radius: 5px; padding: 0; border: 0; height: 45px; background-color: #c6c6c6;" placeholder="Type New Task Here..">'
         const newTextBox = document.querySelector('.newTextBox')
         newTextBox.focus();
+        textBox.disabled = true;
+        newTextBox.addEventListener('blur', function () {
+            newTextBox.focus()
+            clonedItemDiv.classList.add('animation');
+            newTextBox.classList.add('animation');
+            clonedItemDiv.addEventListener('animationend', function () {
+                clonedItemDiv.classList.remove('animation');
+                newTextBox.classList.remove('animation');
+            })
+        })
         newTextBox.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && newTextBox.value !== '') {
                 const value = newTextBox.value;
@@ -39,6 +49,7 @@ function addTask() {
                 const newTask = document.createElement("p");
                 document.querySelector(`#item${taskCount}`).insertBefore(newTask, document.querySelector('#propertyButton' + taskCount));
                 newTask.textContent = value;
+                textBox.disabled = false;
             }
         })
         

@@ -16,9 +16,10 @@ p {
     justify-content: center;
     align-items: center;
     padding:5px;
-    background-color: #afafaf;
+    background-color: lightgray;
     font-size: 20px;
-    font-weight: bolder;
+    font-weight: 100;
+
 }
 
 #title {
@@ -28,7 +29,7 @@ p {
     background-color: lightgray;
     border-radius: 15px;
     border: none;
-    padding: -32px 5px 5px;
+    padding:    5px;
 }
 .options {
     display: flex;
@@ -124,4 +125,41 @@ p {
 }
 .editButtons {
     margin-left: 50px;
+    background-color: #9f782d;
+}
+:root {
+    --itemcolor: #c6c6c6;
+    --color: #cf1e1e;
+    --translateX: 5px;
+}
+.edit-icon {
+    width: 25px;
+    background-color: #dfa433;
+    border-radius: 3px;
+    padding: 5px;
+}
+@keyframes buttonAnimation {
+    0% {
+        background-color: var(--itemcolor);
+        transform: translateX(0);
+    }
+    25% {
+        background-color: var(--color);
+        transform: translateX(var(--translateX));
+    }
+    50% {
+        background-color: var(--itemcolor);
+        transform: translateX(0);
+    }
+    75% {
+        background-color: var(--color);
+        transform: translateX(calc(-1 * var(--translateX)));
+    }
+    100% {
+        background-color: var(--itemcolor);
+        transform: translateX(0);
+    }
+}
+.animation {
+    animation: buttonAnimation .5s ease;
 }
